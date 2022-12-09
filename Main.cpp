@@ -41,17 +41,16 @@ int main(){
     // initaliser et le jeu et inserer les données
    
 
-    GameEngine game = GameEngineReader::readDataFile("./8x8.txt");
+    GameEngine game = GameEngineReader::readDataFile("./5x5.txt");
     ControllerEngine* solver = new ControllerEngine(&game);
 
-    int algo = 1;
+    int algo = 3;
     switch(algo){
     case 1:
         sequential(solver);
         break;
 
     case 2:
-
         parallel(solver);
         break;
 

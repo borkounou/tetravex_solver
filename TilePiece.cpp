@@ -1,12 +1,7 @@
 #include "TilePiece.h"
 
 
-TilePiece::TilePiece(int left, int top, int right, int bottom){
-    // Axe vertical
-    vert = DirectionAxis(bottom, top);
-    // axe horizontal 
-    hori = DirectionAxis(left, right);
-}
+
 
 void TilePiece::setPlacedTile(bool _placed){
     placed = _placed;
@@ -14,4 +9,12 @@ void TilePiece::setPlacedTile(bool _placed){
 
 bool TilePiece::isPlacedTile(){
     return placed;
+}
+
+TilePiece::TilePiece(int left, int top, int right, int bottom){
+
+    // axe horizontal 
+    hori = DirectionAxis(left, right);
+    // Axe vertical
+    vert = DirectionAxis(bottom, top);
 }

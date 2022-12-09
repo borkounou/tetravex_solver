@@ -11,23 +11,35 @@ Dans ce cas, il nous faut la logique:
 - afficher les pions*/
 
 class GameEngine{
-private:
-    int size;
-    BoardEngine* board;
-    vector<TilePiece*> stockage;
 
 public:
-   GameEngine();
-    GameEngine(int _size);
-    vector<TilePiece*> getStockage(){ return stockage; }
-    int getSizeOfBoard(){return size;}
-    void addTileToBoard(TilePiece* p);
-    void removeTileFromBoard(int x, int y);
+    // Afficher le resultat du tableau 
     void displayBoardResult();
-    bool moveTile(TilePiece *p, int x, int y);
+    // deplacer le pion 
+    bool moveTile(TilePiece *tilePiece, int x, int y);
+    // Afficher les pieces 
     void displayStockage();
+    // verifier s'il reste encore de pions
     bool stockageIsEmpty();
+    // une copie de gameEngine
     GameEngine copyBoard();
+    GameEngine(int dim);
+    // les differentes valeurs de stockage
+    vector<TilePiece*> getStockage(){ return stockage; }
+    // La dimension du tableau 
+    int getSizeOfBoard(){return size;}
+    //ajouter de pion au tableau 
+    void addTileToBoard(TilePiece* p);
+    // Supprimer de pion de tableaus
+    void removeTileFromBoard(int x, int y);
+
+private:
+// La dimension du tableau
+    int size;
+    // le tableau 
+    BoardEngine* board;
+    // le stockage de pions
+    vector<TilePiece*> stockage;
 
   
 };

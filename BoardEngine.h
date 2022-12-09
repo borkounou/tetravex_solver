@@ -2,6 +2,23 @@
 #include "TilePiece.h"
 using namespace std;
 class BoardEngine{
+
+public:
+  // Constructeur 
+    BoardEngine(int dim);
+    // Placer le pion 
+    bool placeTile(TilePiece* piece, int posx, int posy);
+    // Enlever un pion de la position specifiée
+    void removeTile(int posx, int posy);
+    // Afficher le plateau
+    void displayT();
+    // Retourne la dimension du tableau 
+    int getDimension();
+    static void displayT(vector<TilePiece*> v);
+    TilePiece* getTileAt(int posx, int posy);
+    bool placableTile(TilePiece* piece, int posx, int posy);
+ 
+
 private:
  //Definir les variables suivantes: dim la dimension
     int dimension;
@@ -18,16 +35,4 @@ private:
                                                                      2 
                                                                      */
     vector<vector<TilePiece*> > plateau;
-
-public:
-    BoardEngine();
-    BoardEngine(int _size);
-    // Retourne la dimension du tableau 
-    int getDimension();
-    TilePiece* getTileAt(int posx, int posy);
-    bool placableTile(TilePiece* piece, int posx, int posy);
-    bool placeTile(TilePiece* piece, int posx, int posy);
-    void removeTile(int posx, int posy);
-    void displayT();
-    static void displayT(vector<TilePiece*> v);
 };

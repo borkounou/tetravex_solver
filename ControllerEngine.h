@@ -5,18 +5,29 @@ using namespace std;
 class ControllerEngine{
 
 public:
-    chrono::high_resolution_clock::time_point start;
-    ControllerEngine();
-    ControllerEngine(GameEngine* _game);
+  
+    // La methode sequentielle
     void sequentialSolverBactrack();
+    // simple brute force recursive
     void simpleBruteforceSolver(int posx, int posy);
-    void parallelBruteforceSolver(int posx, int posy, GameEngine &game);
-    void parallelSolver(int i);
-    void parallelBacktrackingSolver(int threadAmount);
+    // parallele
+    void parallelBruteforceSolver(int posx, int posy, GameEngine &gameEngine);
+    ControllerEngine(GameEngine* gameEngine);
+    // Deuxieme fonction pour faire la parallelisation
+    void parallelSolver(int threadS);
+    void parallelBacktrackingSolver(int amount);
+ 
 
 private:
+   
+   // Game engine definit
     GameEngine* game;
-    int currentPiece;
+    // la classe threadPoolsolver definie
     ThreadPoolSolver tpool;
+    // le pion actuel
+    int currentPiece;
+    // le temps de commencement
+    chrono::high_resolution_clock::time_point start;
+    
 };
 
