@@ -1,4 +1,6 @@
 
+#ifndef _GAMEENGINE_H_
+#define  _GAMEENGINE_H_
 #include "BoardEngine.h"
 using namespace std;
 
@@ -43,6 +45,8 @@ private:
 
   
 };
+
+#endif
 
 
 

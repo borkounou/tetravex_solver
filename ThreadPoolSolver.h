@@ -1,3 +1,5 @@
+#ifndef _THREADPOOLSOLVER_H_
+#define _THREADPOOLSOLVER_H_
 #include <vector>
 #include <stack>
 #include <thread>
@@ -20,4 +22,6 @@ public:
 // declarer un vector de different thread
 vector<thread*> threads;      
 };
+
+#endif
 

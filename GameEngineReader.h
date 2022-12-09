@@ -1,4 +1,5 @@
-
+#ifndef _GAMEENGINEREADER_H_
+#define _GAMEENGINEREADER_H_
 // Importer la classe gameEngine afin de lire le fichier des données:
 #include "GameEngine.h"
 #include <string>
@@ -9,4 +10,5 @@ public:
     static GameEngine readDataFile(string file_path);
 };
 
+#endif
 

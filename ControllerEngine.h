@@ -1,3 +1,5 @@
+#ifndef _CONTROLLERENGINE_H_
+#define _CONTROLLERENGINE_H_
 #include "GameEngineReader.h"
 #include "ThreadPoolSolver.h"
 #include <chrono>
@@ -30,4 +32,6 @@ private:
     chrono::high_resolution_clock::time_point start;
     
 };
+
+#endif
 

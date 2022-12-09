@@ -12,7 +12,7 @@ void ControllerEngine::sequentialSolverBactrack(){
 }
 
 
-void ControllerEngine::parallelBruteforceSolver(int x, int y, GameEngine &gamecp){
+void ControllerEngine::parallelBruteforceSolver(int posx, int posy, GameEngine &gamecp){
     if(gamecp.stockageIsEmpty()){
         auto stop = chrono::high_resolution_clock::now();
         cout << "Computation time is: " << chrono::duration_cast<chrono::duration<double>>(stop - start).count() << "s"<<endl;;
@@ -22,15 +22,15 @@ void ControllerEngine::parallelBruteforceSolver(int x, int y, GameEngine &gamecp
     }
     for(TilePiece *p : gamecp.getStockage()){
         if(!p->isPlacedTile()){
-            if(gamecp.moveTile(p, x, y)){
-                int nextx = x;
-                int nexty = y+1;
-                if(y == gamecp.getSizeOfBoard()-1){
+            if(gamecp.moveTile(p, posx, posy)){
+                int nextx = posx;
+                int nexty = posy+1;
+                if(posy == gamecp.getSizeOfBoard()-1){
                     nextx ++;
                     nexty = 0;
                 }
                 parallelBruteforceSolver(nextx, nexty, gamecp);
-                gamecp.removeTileFromBoard(x, y);
+                gamecp.removeTileFromBoard(posx, posy);
             }
         }
     }

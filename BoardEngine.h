@@ -1,3 +1,5 @@
+#ifndef _BOARDENGINE_H_
+#define _BOARDENGINE_H_
 #include <vector>
 #include "TilePiece.h"
 using namespace std;
@@ -36,3 +38,5 @@ private:
                                                                      */
     vector<vector<TilePiece*> > plateau;
 };
+
+#endif

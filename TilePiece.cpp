@@ -1,10 +1,7 @@
 #include "TilePiece.h"
 
-
-
-
-void TilePiece::setPlacedTile(bool _placed){
-    placed = _placed;
+void TilePiece::setPlacedTile(bool pla){
+    placed = pla;
 }
 
 bool TilePiece::isPlacedTile(){

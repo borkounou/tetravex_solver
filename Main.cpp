@@ -44,7 +44,7 @@ int main(){
     GameEngine game = GameEngineReader::readDataFile("./5x5.txt");
     ControllerEngine* solver = new ControllerEngine(&game);
 
-    int algo = 3;
+    int algo = 1;
     switch(algo){
     case 1:
         sequential(solver);

@@ -1,22 +1,22 @@
 
 #include "DirectionAxis.h"
-
-
-
+#define Ie -1
+#define NULLVAL 0
+// 
 int DirectionAxis::get(int id){
-    if(id < 0) {
+    if(id < NULLVAL) {
         return negative_val;
         }
-    if(id > 0){ 
+    if(id > NULLVAL){ 
         return positive_val;
         }
 
-    return -1;
+    return Ie;
 }
 
 DirectionAxis::DirectionAxis(){
-    negative_val = 0;
-    positive_val = 0;
+    negative_val = NULLVAL;
+    positive_val = NULLVAL;
 }
 DirectionAxis::DirectionAxis(int negate, int posit){
     negative_val = negate;
